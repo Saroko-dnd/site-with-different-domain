@@ -8,6 +8,8 @@
 </head>
 <body>
     <h1 id="time-counter">30</h1>
+    <button id="button-without-timeout">Open another site immediately</button>
+    <button id="button-with-timeout">Wait 30 seconds and open another site</button>
     <script>
         var timeCounterElement = document.querySelector('#time-counter');
 
@@ -34,8 +36,10 @@
                 timeCounterElement.innerHTML = counterValue;
             }, 1000);
         }
+        
+        document.querySelector('#button-without-timeout').addEventListener('click', goToAnotherSiteImmediately);
+        document.querySelector('#button-with-timeout').addEventListener('click', goToAnotherSiteWithTimeout);
+        
    </script>
-    <button onclick="javascript:goToAnotherSiteImmediately()">Open another site immediately</button>
-    <button onclick="javascript:goToAnotherSiteWithTimeout()">Wait 30 seconds and open another site</button>
 </body>
 </html>
