@@ -31,7 +31,7 @@
             setTimeout(function() {
                 location.assign(getParameterByName('target'));
             }, 30000);
-            setInterval(() => {
+            setInterval(function (){
                 counterValue -= 1;
                 timeCounterElement.innerHTML = counterValue;
             }, 1000);
