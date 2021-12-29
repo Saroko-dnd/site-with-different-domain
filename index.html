@@ -20,11 +20,11 @@
             return decodeURIComponent(results[2].replace(/\+/g, ' '));
         }
 
-        function goToACImmediately() {
+        function goToAnotherSiteImmediately() {
             location.assign(getParameterByName('target'));
         }
       
-        function goToACWithTimeout() {
+        function goToAnotherSiteWithTimeout() {
             var counterValue = 30;
             setTimeout(function() {
                 location.assign(getParameterByName('target'));
@@ -35,7 +35,7 @@
             }, 1000);
         }
    </script>
-    <button onclick="goToACImmediately()">Open another site immediately</button>
-    <button onclick="goToACWithTimeout()">Wait 30 seconds and open another site</button>
+    <button onclick="javascript:goToAnotherSiteImmediately()">Open another site immediately</button>
+    <button onclick="javascript:goToAnotherSiteWithTimeout()">Wait 30 seconds and open another site</button>
 </body>
 </html>
