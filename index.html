@@ -13,10 +13,10 @@
     <script>
         var timeCounterElement = document.querySelector('#time-counter');
 
-        function getParameterByName(name, url = window.location.href) {
+        function getParameterByName(name) {
             name = name.replace(/[\[\]]/g, '\\$&');
             var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-                results = regex.exec(url);
+                results = regex.exec(window.location.href);
             if (!results) return null;
             if (!results[2]) return '';
             return decodeURIComponent(results[2].replace(/\+/g, ' '));
