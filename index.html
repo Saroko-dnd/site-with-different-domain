@@ -11,14 +11,23 @@
     <script>
         var timeCounterElement = document.querySelector('#time-counter');
 
+        function getParameterByName(name, url = window.location.href) {
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
         function goToACImmediately() {
-            location.assign('https://www.w3schools.com/python/default.asp');
+            location.assign(getParameterByName('target'));
         }
       
         function goToACWithTimeout() {
             var counterValue = 30;
             setTimeout(function() {
-                location.assign('https://www.w3schools.com/python/default.asp');
+                location.assign(getParameterByName('target'));
             }, 30000);
             setInterval(() => {
                 counterValue -= 1;
